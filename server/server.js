@@ -24,7 +24,7 @@ mongoose.connect(databaseUrl);
 
 //Router
 const swapiRouter = require('./routers/CC5Router');
-app.use('/swapi', swapiRouter);
+app.use('/cc5', swapiRouter);
 
 
 //Start up the server

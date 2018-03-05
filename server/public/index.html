@@ -5,10 +5,19 @@
     <title>Week 5 Code Challenge</title>
     <script src="/vendors/angular.js" charset="utf-8"></script>
     <script src="scripts/client.js"></script>
+    <script src="scripts/controllers/codeChallenge5Controller.js" charset="utf-8"></script>
+    <script src="scripts/services/codeChallenge5Services.js" charset="utf-8"></script>
     <link rel="stylesheet" href="/css/master.css">
-
   </head>
-  <body>
+  <body ng-controller="CC5Controller as cc">
     <h1>Week 5 Code Challenge</h1>
+    <input ng-model="cc.chat.name" type="text" placeholder="name">
+    <input ng-model="cc.chat.message" type="text" placeholder="message">
+    <button ng-click="cc.submit(cc.chat)">Submit</button>
+    <div>
+      <ul>
+        <li ng-repeat="message in cc.log.messages">{{message.name}}: {{message.message}}</li>
+      </ul>
+    </div>
   </body>
 </html>
