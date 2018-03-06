@@ -6,21 +6,7 @@ const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json()); // needed for angular requests
 
-// Mongoose setup ------------------------------------
-const mongoose = require('mongoose');
 
-const databaseUrl = 'mongodb://localhost:27017/ccfive_michael';
-
-mongoose.connection.on('connected', function() {
-  console.log('mongoose connected to: ', databaseUrl);
-})
-
-mongoose.connection.on('error', function(error) {
-  console.log('mongoose connection error: ', error);
-})
-
-mongoose.connect(databaseUrl);
-// End Mongoose Setup -------------------------------
 
 //Router
 const swapiRouter = require('./routers/CC5Router');
